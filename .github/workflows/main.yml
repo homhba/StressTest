@@ -1,5 +1,7 @@
-
-k6_cloud_test:
+name: Main Workflow
+on: [push]
+jobs:
+  build:
   name: k6 cloud test run
   runs-on: ubuntu-latest
   steps:
@@ -7,7 +9,7 @@ k6_cloud_test:
       uses: actions/checkout@v1
 
     - name: Run k6 cloud test
-      uses: k6io/action@v0.1
+      uses: grafana/k6-action@v0.2.0
       with:
         filename: k6.js
         cloud: true
