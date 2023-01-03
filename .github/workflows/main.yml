@@ -2,15 +2,14 @@ name: Main Workflow
 on: [push]
 jobs:
   build:
-  name: k6 cloud test run
-  runs-on: ubuntu-latest
-  steps:
-    - name: Checkout
-      uses: actions/checkout@v1
-
-    - name: Run k6 cloud test
-      uses: grafana/k6-action@v0.2.0
-      with:
-        filename: k6.js
-        cloud: true
-        token: ${{ d8ae3250c5a9f6af2abc1158fee2a834d22e0b4dcdb029fe45f18d297394d1e4 }}
+    name: Run k6 test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Run k6 cloud test
+        uses: grafana/k6-action@v0.2.0
+        with:
+          filename: k6.js
+          cloud: true
+          token: ${{ d8ae3250c5a9f6af2abc1158fee2a834d22e0b4dcdb029fe45f18d297394d1e4 }}
