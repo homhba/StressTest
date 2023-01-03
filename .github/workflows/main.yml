@@ -12,4 +12,4 @@ jobs:
         with:
           filename: k6.js
           cloud: true
-          token: ${{ d8ae3250c5a9f6af2abc1158fee2a834d22e0b4dcdb029fe45f18d297394d1e4 }}
+          token: ${{secrets.K6_CLOUD_API_TOKEN}}
