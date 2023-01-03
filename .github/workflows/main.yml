@@ -7,9 +7,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Run k6 cloud test
+      - name: Run k6 local test
         uses: grafana/k6-action@v0.2.0
         with:
           filename: k6.js
-          cloud: true
-          token: ${{secrets.K6_CLOUD_API_TOKEN}}
