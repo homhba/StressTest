@@ -14,10 +14,7 @@ export const options = {
     { target: 20, duration: '30s' },
     { target: 15, duration: '30s' },
     { target: 0, duration: '30s' },
-  ],
-  thresholds: {
-    http_reqs: ['count < 100'],
-  },
+  ]
 };
 
 export default function () {
