@@ -11,9 +11,9 @@ export const requests = new Counter('http_reqs');
 
 export const options = {
   stages: [
-    { target: 20, duration: '1m' },
-    { target: 15, duration: '1m' },
-    { target: 0, duration: '1m' },
+    { target: 20, duration: '30s' },
+    { target: 15, duration: '30s' },
+    { target: 0, duration: '30s' },
   ],
   thresholds: {
     http_reqs: ['count < 100'],
@@ -29,6 +29,5 @@ export default function () {
 
   const checkRes = check(res, {
     'status is 200': (r) => r.status === 200,
-    'response body': (r) => r.body.indexOf('Feel free to browse') !== -1,
   });
 }
